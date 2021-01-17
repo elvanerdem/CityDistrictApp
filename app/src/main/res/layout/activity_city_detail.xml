@@ -214,6 +214,93 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tvDistrictInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            android:text="@null"/>
+
+        <LinearLayout
+            android:id="@+id/llDistrictDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Belediye"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/tvDistrictHall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:text="@null"
+                    android:maxLines="3"/>
+
+                <TextView
+                    android:id="@+id/tvDistrictHallPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:text="@null"
+                    android:gravity="center_vertical"
+                    android:autoLink="phone"
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:drawablePadding="8dp" />
+
+                <TextView
+                    android:id="@+id/tvDistrictHallEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:text="@null"
+                    android:layout_marginTop="8dp"
+                    android:autoLink="email"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvDistrictHallWeb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:text="@null"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="3"
+                    android:autoLink="web"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_explore"
+                    android:drawablePadding="8dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
