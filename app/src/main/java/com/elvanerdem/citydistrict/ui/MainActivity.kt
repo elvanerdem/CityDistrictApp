@@ -3,11 +3,8 @@ package com.elvanerdem.citydistrict.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.elvanerdem.citydistrict.R
 import com.elvanerdem.citydistrict.adapter.CityListAdapter
 import com.elvanerdem.citydistrict.model.Cities
@@ -15,6 +12,7 @@ import com.elvanerdem.citydistrict.model.City
 import com.elvanerdem.citydistrict.utils.AppUtils
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
+import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         getCityList()
 
         val cityListAdapter = CityListAdapter(cityList)
-        findViewById<RecyclerView>(R.id.rvCityList).apply {
+        rvCityList.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = cityListAdapter
         }
@@ -40,12 +38,12 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClick(v: View, position: Int) {
                 val city = cityListAdapter.getItem(position)
                 val intent = Intent(this@MainActivity, CityDetailActivity::class.java)
-                intent.putExtra("CityName", city?.name)
-                intent.putExtra("CityDetail", city?.let { getCityDetail(it) })
+                intent.putExtra("City", city?.let { getCityDetail(it) })
                 startActivity(intent)
             }
 
         })
+
     }
 
     private fun getCityList() {

@@ -38,6 +38,7 @@ object AppUtils {
         bufferedWriter.close()
     }
 
+
     fun getSharedPrefEditor(context: Context): SharedPreferences.Editor {
         return context.getSharedPreferences(SHARED_PREF_KEY, MODE_PRIVATE).edit()
     }
